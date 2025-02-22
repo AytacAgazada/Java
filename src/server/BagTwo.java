@@ -77,8 +77,7 @@ public class BagTwo {
                 break;
             case 5:
                 System.out.println("Thank you for using the ATM!");
-                loggedIn = false;
-                break;
+                System.exit(0);
             default:
                 System.out.println("Invalid choice. Please select a valid option.");
 
