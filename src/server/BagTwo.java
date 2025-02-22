@@ -33,7 +33,7 @@ public class BagTwo {
         System.out.println("5. Exit");
 
         int choice = scanner.nextInt();
-
+        scanner.nextLine();
         switch (choice) {
             case 1:
                 System.out.println("Your current balance is: $" + balances[currentAccount]);
@@ -62,6 +62,11 @@ public class BagTwo {
                 break;
             case 4:
                 System.out.print("Enter account number to switch (0-2): ");
+                if (!scanner.hasNextInt()) {
+                    System.out.println("Invalid input. Please enter a number.");
+                    scanner.next();
+                    continue;
+                }
                 int accountToSwitch = scanner.nextInt();
                 if (accountToSwitch < 0 || accountToSwitch >= balances.length) {
                     System.out.println("Invalid account number.");
@@ -72,11 +77,12 @@ public class BagTwo {
                 break;
             case 5:
                 System.out.println("Thank you for using the ATM!");
-                return;
+                loggedIn = false;
+                break;
             default:
                 System.out.println("Invalid choice. Please select a valid option.");
 
-                System.out.println();
+
         }
     }
 }
