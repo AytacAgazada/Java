@@ -75,6 +75,8 @@ public class BagTwo {
                 return;
             default:
                 System.out.println("Invalid choice. Please select a valid option.");
+
+                System.out.println();
         }
     }
 }
