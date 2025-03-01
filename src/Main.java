@@ -2,7 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        String a= "hello";
-        System.out.println(a);
+         int arr[] = {1, 2, 3};
+        System.out.println(arr);
     }
 }

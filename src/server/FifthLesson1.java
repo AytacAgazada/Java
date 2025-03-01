@@ -70,5 +70,6 @@ public class FifthLesson1 {
         }
 
         scanner.close();
+        float a= 0;
     }
 }
