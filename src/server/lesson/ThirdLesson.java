@@ -1,5 +1,5 @@
-package server;
-import java.util.Scanner;
+package server.lesson;
+
 public class ThirdLesson {
     public static void main(String[] args) {
         int number = 0 ;

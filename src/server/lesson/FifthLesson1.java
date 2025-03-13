@@ -1,4 +1,4 @@
-package server;
+package server.lesson;
 import java.util.Scanner;
 
 public class FifthLesson1 {
