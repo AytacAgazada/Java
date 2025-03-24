@@ -41,8 +41,7 @@ public class Main {
 //        return false;
     //}
 public static void main(String[] args) {
-    String filePath = "C:\\Users\\User\\Downloads\\z yaradclq qabiliyytini kf et.mp4";
-    System.out.println("Video faylın yolu: " + filePath);
+    System.out.println(10 / 3);
 }
 
 
