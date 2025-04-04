@@ -1,6 +1,6 @@
 package carProject;
 
-public class Mercedes extends server.carProject.Speed {
+public class Mercedes extends carProject.Speed {
 
 
     public Mercedes(int speed) {

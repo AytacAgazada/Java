@@ -1,4 +1,4 @@
-package server.carProject;
+package carProject;
 
 public class Main {
     public static void main(String[] args) {
