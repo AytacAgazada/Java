@@ -38,6 +38,14 @@ public class CoffeeProduct {
     }
 
     @Override
+    public String toString() {
+        return "\n CoffeeProduct: " +
+                "\n id= " + id +
+                "\n cofeeName= " + cofeeName  +
+                "\n price=" + price;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         CoffeeProduct that = (CoffeeProduct) o;
