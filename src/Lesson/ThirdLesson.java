@@ -6,8 +6,7 @@ public class ThirdLesson {
         int result = countUpbyThrees(number);
         System.out.println(result);
 
-/// ///////////////////////////////////
-        
+
 
     }
 
