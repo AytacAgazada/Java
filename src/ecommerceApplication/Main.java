@@ -14,10 +14,8 @@ public class Main {
         customers.add(new Customer(1, "John Doe", "john@example.com"));
         customers.add(new Customer(2, "Jane Smith", "jane@example.com"));
         customers.add(new Customer(3, "Mark Brown", "mark@example.com"));
-
-        List<PremiumCustomer> premiumCustomers = new ArrayList<>();
-        premiumCustomers.add(new PremiumCustomer(4, "Alice Green", "alice@example.com", 0.1));
-        premiumCustomers.add(new PremiumCustomer(5, "Bob White", "bob@example.com", 0.15));
+        customers.add(new PremiumCustomer(4, "Alice Green", "alice@example.com", 0.2));
+        customers.add(new PremiumCustomer(5, "Bob White", "bob@example.com", 0.15));
 
         System.out.println("☕Welcome to CaffeeMarket!");
         System.out.print("Please enter your Customer ID to start:");
@@ -58,6 +56,9 @@ public class Main {
                     }
                     break;
                 case 2:
+                    for (CoffeeProduct coffeeProduct : allProducts){
+                        System.out.println(coffeeProduct);
+                    }
                     System.out.print("Enter product ID to add to cart: ");
                     int addId = scanner.nextInt();
                     cart.addProductById(addId);
@@ -77,9 +78,18 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("Exiting the application...");
-                    System.out.println("Total amount of your cart: $" + cart.calculateTotal());
+
+                    if (!cart.getCartItems().isEmpty()) {
+                        System.out.println("🛍 Final Order Summary:");
+                        Order order1 = new Order(selectedCustomer, cart);
+                        order1.displayOrderDetails();
+                    } else {
+                        System.out.println("🛒 Your cart is empty. No order placed.");
+                    }
+
                     exit = true;
                     break;
+
                 default:
                     System.out.println("Invalid option. Please try again.");
             }
