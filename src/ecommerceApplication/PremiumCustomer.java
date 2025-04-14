@@ -2,7 +2,6 @@ package ecommerceApplication;
 
 public class PremiumCustomer extends Customer{
     private double discountRate;
-
     public PremiumCustomer(int id, String name, String email, double discountRate) {
         super(id, name, email);
         this.discountRate = discountRate;
