@@ -1,8 +1,8 @@
 package ecommerceApplication;
-import ecommerceApplication.CoffeeProduct;
+
 import java.util.*;
 
-public class Cart<T> {
+public class Cart<T extends CoffeeProduct> {
     private List<T> selectedProducts = new ArrayList<>();
     private List<T> allProducts;
 
@@ -10,39 +10,28 @@ public class Cart<T> {
         this.allProducts = allProducts;
     }
 
-    public void addProductById(int id) {
+    public void addProductById(int productId) {
         for (T product : allProducts) {
-            if (product instanceof CoffeeProduct) {
-                CoffeeProduct p = (CoffeeProduct) product;
-                if (p.getId() == id) {
-                    selectedProducts.add((T) p);
-                    System.out.println(p.getCofeeName() + " added to cart.");
-                    return;
-                }
+            if (product.getId() == productId) {
+                selectedProducts.add(product);
+                System.out.println("✅ Added to cart: " + product.getCofeeName());
+                return;
             }
         }
-        System.out.println("Product not found.");
+        System.out.println("❌ Product not found.");
     }
 
-    public void removeProductById(int id) {
-        boolean removed = selectedProducts.removeIf(p -> p instanceof CoffeeProduct && ((CoffeeProduct) p).getId() == id);
-        if (removed) {
-            System.out.println("Product removed from cart.");
-        } else {
-            System.out.println("Product not in cart.");
-        }
+    public void removeProductById(int productId) {
+        selectedProducts.removeIf(p -> p.getId() == productId);
     }
 
     public void viewCart() {
         if (selectedProducts.isEmpty()) {
-            System.out.println("Cart is empty.");
+            System.out.println("🛒 Your cart is empty.");
         } else {
-            System.out.println("Cart items:");
+            System.out.println("🛒 Your Cart:");
             for (T product : selectedProducts) {
-                if (product instanceof CoffeeProduct) {
-                    CoffeeProduct p = (CoffeeProduct) product;
-                    System.out.println(p.getId() + " - " + p.getCofeeName() + " ($" + p.getPrice() + ")");
-                }
+                System.out.println(product.getCofeeName() + " - $" + product.getPrice());
             }
         }
     }
@@ -50,11 +39,12 @@ public class Cart<T> {
     public double calculateTotal() {
         double total = 0;
         for (T product : selectedProducts) {
-            if (product instanceof CoffeeProduct) {
-                CoffeeProduct p = (CoffeeProduct) product;
-                total += p.getPrice();
-            }
+            total += product.getPrice();
         }
         return total;
     }
+    public List<T> getCartItems() {
+        return selectedProducts;
+    }
+
 }
