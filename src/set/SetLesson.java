@@ -2,7 +2,7 @@ package set;
 
 import java.util.*;
 
-public class Set {
+public class SetLesson {
     public static void main(String[] args) {
         HashSet<Object> hashSet = new HashSet<>();
         hashSet.add(123);

@@ -1,8 +1,10 @@
+import java.io.File;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        Scanner scn = new Scanner(System.in);
 //        System.out.print("Enter the size of the array: ");
 //        int n = scn.nextInt();
@@ -39,10 +41,26 @@ public class Main {
 //            }
 //        }
 //        return false;
-    //}
-public static void main(String[] args) {
-    System.out.println(10 / 3);
-}
+        class Solution {
+            public int maxProfit(int[] prices) {
+                int lsf = Integer.MAX_VALUE;
+                int op = 0;
+                int pist = 0;
+
+                for(int i = 0; i < prices.length; i++){
+                    if(prices[i] < lsf){
+                        lsf = prices[i];
+                    }
+                    pist = prices[i] - lsf;
+                    if(op < pist){
+                        op = pist;
+                    }
+                }
+                return op;
+            }
+        }
+    }
+
 
 
 }
