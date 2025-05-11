@@ -19,4 +19,5 @@ public enum TaskStatus {
     public boolean isFinalStatus() {
         return this == COMPLETED;
     }
+
 }

@@ -15,5 +15,6 @@ public enum UrgencyLevel {
     public int adjustedDeadlineDays(int estimatedHours) {
         return (int) Math.ceil(estimatedHours * deadlineMultiplier);
     }
+
 }
 
